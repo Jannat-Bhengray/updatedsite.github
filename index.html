@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #1a1a2e;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .stars {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle 5s linear infinite, move 10s linear infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        @keyframes move {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
+                transform: translateY(-2000px) translateX(500px);
+            }
+        }
+        .navbar {
+            width: 85%;
+            margin: auto;
+            padding: 3px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            width: 100px;
+            cursor: pointer;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            padding-left: 0;
+        }
+        .navbar ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+        .navbar ul li a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0;
+            background: #ece2e5;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+        .about {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .about img {
+            width: 350px;
+            box-shadow: 5px 15px 20px rgba(60, 60, 60, 0.7);  
+
+        }
+        .projects {
+            width: 80%;
+            margin: auto;
+            padding-top: 50px;
+        }
+        .projects .row {
+            display: flex;
+            justify-content: space-around;
+        }
+        .col img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .col .layer {
+            background: rgba(0, 0, 0, 0.7);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            opacity: 0;
+        }
+        .col:hover .layer {
+            opacity: 1;
+        }
+        .text {
+            font-size: 20px;
+            text-align: center;
+        }
+        .card-text {
+            background: #333333;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            color: #ffffff;
+        }
+        .skills {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .jack {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .sparrow {
+            background: #333333;
+            margin: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 5px 15px 20px rgba(60, 60, 60, 0.7);  
+            max-width: 350px;
+        }
+        .sparrow img {
+            width: 100%;
+            border-bottom: 2px solid #e9d8de;
+        }
+        .sparrow .intro {
+            padding: 20px;
+            text-align: center;
+        }
+        .rose {
+            background: #222222;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .content-form {
+            color: #ffffff;
+            text-align: center;
+        }
+        .social-icon {
+            height: 100px;
+            width: 100px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .lily {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .blog-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #1b8cd8;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .blog-button:hover {
+            background-color: #1b8cd8;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="navbar">
+        <img src="D:\main memory\Screenshots\Jannat-logo1.png" class="logo">
+        <ul>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#skills">Skills</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+    </div>
+    <div class="about" id="about">
+        <h1>About Me</h1>
+        <div class="photo-container">
+            <img src="D:\main memory\Screenshots\WhatsApp_Image .jpg" class="j1 full-photo">
+        </div>
+        <p>Hey! I'm Jannat Bhengray, a seasoned data enthusiast passionate about unraveling insights from complex datasets. Armed with expertise in Excel, Forecasting, SQL (Silver badge on HackerRank), Python (Pandas), and Power BI (including DAX functions), I thrive on transforming raw data into actionable strategies.</p>
+        <p>My journey includes 4 impactful projects demonstrating my versatile skill set, alongside 2 enriching internships in data analytics and marketing. At Rawcult, a dynamic startup, I've contributed my skillset to drive data-driven decisions, amplifying productivity and results. From prompt engineering to leveraging Excel with ChatGPT, I'm all about maximizing efficiency and delivering tangible outcomes.</p>
+    </div>
+    
+    <style>
+        .about {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .photo-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+            margin-bottom: 40px; /* Added margin bottom for spacing */
+        }
+        .full-photo {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 15px;
+            box-shadow: 5px 15px 20px rgba(60, 60, 60, 0.7);  
+
+            transition: all 0.3s ease;
+        }
+        .full-photo:hover {
+            transform: scale(1.05);
+        }
+        .about-content {
+            text-align: left; /* Adjust text alignment as per your design */
+        }    
+
+
+    </style>
+    
+    <section class="projects" id="projects">
+        <h1 class="text-center">Projects</h1>
+        <div class="jack">
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot (42).png" alt="Beyond the Frame: A Pixar Data Story">
+                <div class="card-text">
+                    <h3>Beyond the Frame: A Pixar Data Story</h3>
+                    <p>Pixar Data Unboxed” A deep-dive into 28 iconic Pixar movies using Power BI, Excel & DAX. From handling missing budgets to discovering hidden talent and decoding post-2020 trends, this interactive report blends storytelling with analytics. For fans, analysts, and dreamers alike</p>
+                    <a href="https://www.linkedin.com/posts/jannat-bhengray_pixar-analysis-activity-7312376935769153536-NkdE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGNDmYBXtbocWho5xu11z8KkV5QiD8mddQ" class="blog-button">Blog</a>
+                </div>
+            </div>
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot (43).png" alt="Spotify Behavior Blueprint">
+                <div class="card-text">
+                    <h3>Spotify Behavior Blueprint</h3>
+                    <p>"Spotify, Streamlined"  A Spotify listening journey decoded using Excel, SQL & DAX. From top songs and skip rates to late-night jam sessions and favorite artists, this deep dive reveals not just what they listened to, but who they are as listeners. Data with rhythm, heart, and 336+ hours of The Beatles</p>
+                    <a href="https://www.linkedin.com/posts/jannat-bhengray_spotify-challenge-activity-7307721360930131968-Df7-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGNDmYBXtbocWho5xu11z8KkV5QiD8mddQ" class="blog-button">Blog</a>
+                </div>
+            </div>
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot(419).png" alt="World Championship Analysis Report">
+                <div class="card-text">
+                    <h3>World Championship (1940-2023) Analysis</h3>
+                    <p>Explore the "World Championship Analysis Report," where AI and Excel clean and visualize sports data with Power BI. Uncover key trends in country performance and gender-specific winners, providing insights into global championship successes.</p>
+                    <a href="https://www.linkedin.com/posts/jannat-bhengray_dataabranalytics-powerbi-excelabrwithabrgpt-activity-7208468545871974400-oMA8?utm_source=share&utm_medium=member_desktop" class="blog-button">Blog</a>
+                </div>
+            </div>
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot (477).png" alt="Maven Hospital Analysis Report">
+                <div class="card-text">
+                    <h3>Maven Hospital Analysis</h3>
+                    <p>Explore critical trends in patient admissions, insurance coverage, and demographics. Key insights include a peak in 2014 admissions, Medicaid's leading coverage, and city-specific patient distributions.</p>
+                    <a href="https://www.linkedin.com/posts/jannat-bhengray_welcome-to-the-analysis-of-the-maven-hospital-activity-7219330777828708352-CFxO?utm_source=share&utm_medium=member_desktop" class="blog-button">Blog</a>
+                </div>
+            </div>
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot(420).png" alt="National Health Measure Analysis">
+                <div class="card-text">
+                    <h3>National Health Measure Analysis</h3>
+                    <p>Uncover the "National Health Measure Analysis Report," where NITI Aayog's data is processed with Pandas, Excel, and Power BI, revealing crucial gaps in budgeting and utilization across states. Receive targeted strategies for enhanced health planning based on these insights.</p>
+                    <a href="https://www.linkedin.com/posts/jannat-bhengray_dataanalyst-nitiaayog-analysis-activity-7209535026110111744-16BB?utm_source=share&utm_medium=member_desktop" class="blog-button">Blog</a>
+                </div>
+            </div>
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot(437).png" alt="Campaign Effectiveness Analysis">
+                <div class="card-text">
+                    <h3>All Video Games Analysis (1995-2023)</h3>
+                    <p>Explore the "All Video Games Analysis (1990-2024)," revealing the most cherished gaming genre and the influential developer. Discover the impact of popular games on community engagement through significant user reviews.</p>
+                    <a href="https://www.linkedin.com/posts/jannat-bhengray_video-game-dataset-analysis-report-objective-activity-7210890110957932545-CZu_?utm_source=share&utm_medium=member_desktop" class="blog-button">Blog</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .projects h1 {
+            text-align: center;
+        }
+        .jack {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .sparrow {
+            width: 32%; /* 3 items per row with some spacing */
+            margin-bottom: 20px;
+        }
+        .card-text h3 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #f3edef;
+        }
+    </style>
+    
+    
+    <section class="skills" id="skills">
+        <h1>Skills</h1>
+        <div class="jack">
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot(421).png">
+                <div class="intro">
+                    <h3>Python</h3>
+                    <p>Experienced in Python, specializing in data manipulation and analysis with Pandas. Skilled in cleaning, transforming, and visualizing datasets to extract actionable insights.</p>
+                </div>
+            </div>
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot(422).png">
+                <div class="intro">
+                    <h3>Data Visualization</h3>
+                    <p>Skilled in data visualization using Power BI, creating dynamic and insightful dashboards. Experienced in utilizing custom DAX formulas and slicers to highlight key trends and insights.</p>
+                </div>
+            </div>
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot(423).png">
+                <div class="intro">
+                    <h3>SQL</h3>
+                    <p>Proficient in SQL with a Silver badge on HackerRank. Skilled in querying databases, writing complex queries, and optimizing data retrieval.</p>
+                </div>
+            </div>
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot(425).png">
+                <div class="intro">
+                    <h3>Prompt Engineering</h3>
+                    <p>Proficient in prompt engineering, crafting custom Excel formulas to boost efficiency and productivity. Skilled in optimizing workflows for streamlined operations.</p>
+                </div>
+            </div>
+            <div class="sparrow">
+                <img src="D:\main memory\Screenshots\Screenshot(424).png">
+                <div class="intro">
+                    <h3>Excel</h3>
+                    <p>Excel forecasting expert, adept at predicting future trends with precision. Skilled in implementing models to drive strategic decision-making and boost productivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .skills h1 {
+            text-align: center;
+        }
+        .intro h3 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+            color: #eadde1;
+        }
+    </style>
+    
+ 
+
+    <!-- Contact Me Section -->
+    <section class="rose" id="contact">
+        <h1>Contact Me</h1>
+        <div class="content-form">
+            <h2>E-mail</h2>
+            <p>jannatbhengray@gmail.com</p>
+        </div>
+        <div class="lily" style="display: flex; justify-content: center;">
+            <div style="padding-right: 10px;">
+                <a href="https://www.linkedin.com/in/jannat-bhengray" target="_blank">
+                    <img src="D:\main memory\Screenshots\Screenshot(442).png" alt="LinkedIn" class="social-icon">
+                    <p style="color: rgb(233, 236, 239); font-size: large; text-align: center;">Click here for LinkedIn</p>
+                </a>
+            </div>
+            <div style="padding-right: 10px; padding-left: 10px;">
+                <a href="https://x.com/JBhengray79407?t=97cFEg-JfSYg5Po_gp8xkg&s=09" target="_blank">
+                    <img src="D:\main memory\Screenshots\Screenshot(438).png" alt="Twitter" class="social-icon">
+                    <p style="color: rgb(233, 236, 239); font-size: large; text-align: center;">Click here for Twitter</p>
+                </a>
+            </div>
+            <div style="padding-left: 10px;">
+                <a href="https://github.com/Jannat-Bhengray/Analytical-Project/pulse" target="_blank">
+                    <img src="D:\main memory\Screenshots\Screenshot(426).png" alt="GitHub" class="social-icon">
+                    <p style="color: rgb(233, 236, 239); font-size: large; text-align: center;">Click here for GitHub</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    <script>
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 6 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDuration = Math.random() * 5 + 5 + 's';
+            star.style.animationDelay = Math.random() * 5 + 's';
+            document.querySelector('.stars').appendChild(star);
+            setTimeout(() => {
+                star.remove();
+            }, 10000);
+        }
+
+        setInterval(createStar, 100);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            for (let i = 0; i < 100; i++) {
+                createStar();
+            }
+        });
+    </script>
+</body>
+</html>
